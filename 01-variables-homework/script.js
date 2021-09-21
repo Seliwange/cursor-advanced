@@ -8,7 +8,7 @@ console.log("Minimun price: " + Math.min(applePrice, lemonPrice, melonPrice));
 const sumPrice = applePrice + lemonPrice + melonPrice;
 console.log(`Amount: ${sumPrice}`);
 
-console.log("Rounding: " + Math.floor(applePrice) + Math.floor(lemonPrice) + Math.floor(melonPrice));
+console.log("Rounding: " + (Math.floor(applePrice) + Math.floor(lemonPrice) + Math.floor(melonPrice)));
 
 console.log("Rounded to hundreds: " + Math.round(sumPrice / 100) * 100);
 
