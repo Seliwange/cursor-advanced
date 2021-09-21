@@ -17,7 +17,7 @@ console.log("Even number: " + (Math.floor(sumPrice) % 2 === 0));
 console.log(`The amount of the rest: ${500 - sumPrice}`);
 
 const avrgPrice = (applePrice + lemonPrice + melonPrice) / 3;
-console.log("Everage: " + Math.round(avrgPrice * 10) / 10);
+console.log("Everage: " + Math.round(avrgPrice * 100) / 100);
 
 const discount = Math.floor(Math.random() * 101); // Returns a random integer from 0 to 100
 console.log("Net profit: " + Math.round(((sumPrice / 2) - ((sumPrice * discount) / 100)) * 100) / 100);
