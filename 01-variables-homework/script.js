@@ -2,24 +2,44 @@ const applePrice = 15.678;
 const lemonPrice = 123.965;
 const melonPrice = 90.2345;
 
+const maxPrice = Math.max(applePrice, lemonPrice, melonPrice);
+const minPrice = Math.min(applePrice, lemonPrice, melonPrice);
 const sumPrice = applePrice + lemonPrice + melonPrice;
+const sumOfRounding = (Math.floor(applePrice) + Math.floor(lemonPrice) + Math.floor(melonPrice));
+const roundedToHundreds = Math.round(sumPrice / 100) * 100;
+const checkIfEven = (Math.floor(sumPrice) % 2 === 0);
+
+const totalAmountOfMoney = 500;
+const sumOfTheRest = totalAmountOfMoney - sumPrice;
+
 const avrgPrice = (applePrice + lemonPrice + melonPrice) / 3;
+const roundingEverage = Math.round(avrgPrice * 100) / 100;
+
 const discount = Math.floor(Math.random() * 101); // Returns a random integer from 0 to 100
+const sumOfDiscount = Math.round(((sumPrice * discount) / 100) * 100) / 100;
+const cost = Math.round((sumPrice / 2) * 100) / 100;
+const netProfit = +(cost - sumOfDiscount).toFixed(2);
 
-console.log(`Maximun price: ${Math.max(applePrice, lemonPrice, melonPrice)}
+console.log(`Maximun price: ${maxPrice}
 
-Minimun price: ${Math.min(applePrice, lemonPrice, melonPrice)}
+Minimun price: ${minPrice}
 
-Amount: ${sumPrice}
+Total amount: ${sumPrice}
 
-Rounding: ${(Math.floor(applePrice) + Math.floor(lemonPrice) + Math.floor(melonPrice))}
+Rounding: ${sumOfRounding}
 
-Rounded to hundreds: ${Math.round(sumPrice / 100) * 100}
+Rounded to hundreds: ${roundedToHundreds}
 
-Even number: ${(Math.floor(sumPrice) % 2 === 0)}
+Total amount of prices is even: ${checkIfEven}
 
-The amount of the rest: ${500 - sumPrice}
+The amount of the rest: ${sumOfTheRest}
 
-Everage: ${Math.round(avrgPrice * 100) / 100}
+Everage: ${roundingEverage}
 
-Net profit: ${Math.round(((sumPrice / 2) - ((sumPrice * discount) / 100)) * 100) / 100}`);
+Discount: ${discount}
+
+Total amount with discount: ${sumOfDiscount}
+
+Cost: ${cost}
+
+Net profit: ${netProfit}`);
