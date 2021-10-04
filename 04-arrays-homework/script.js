@@ -14,9 +14,9 @@ const getPairs = (studentsPairs) => {
 // 2
 const getPairsThemes = (students, studentsThemes) => {
     const pairsThemes = [];
-    pairsThemes.push([[students[0][0] + ' and ' + students[0][1]].concat(studentsThemes[1])]);
-    pairsThemes.push([[students[1][0] + ' and ' + students[1][1]].concat(studentsThemes[2])]);
-    pairsThemes.push([[students[2][0] + ' and ' + students[2][1]].concat(studentsThemes[0])]);
+    pairsThemes.push([students[0][0] + ' and ' + students[0][1]].concat(studentsThemes[1]));
+    pairsThemes.push([students[1][0] + ' and ' + students[1][1]].concat(studentsThemes[2]));
+    pairsThemes.push([students[2][0] + ' and ' + students[2][1]].concat(studentsThemes[0]));
     return pairsThemes;
 };
 
@@ -24,7 +24,7 @@ const getPairsThemes = (students, studentsThemes) => {
 const getStudentsMarks = (students, studentMark) => {
     const studentsMarks = [];
     for(let i = 0; i < students.length; i++){
-        studentsMarks.push([[students[i]].concat(studentMark[i])]);
+        studentsMarks.push([students[i]].concat(studentMark[i]));
     }
     return studentsMarks;
 };
@@ -44,7 +44,7 @@ const getRandomMarks = (marks) => {
 const getPairsMarks = (studentsThemes, studentsPairsMarks) => {
     const pairsMarks = [];
     for(let i = 0; i < studentsThemes.length; i++){
-        pairsMarks.push([studentsThemes[i][0].concat(studentsPairsMarks[i])]);
+        pairsMarks.push(studentsThemes[i].concat(studentsPairsMarks[i]));
     }
     return pairsMarks;
 };
