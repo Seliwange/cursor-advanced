@@ -63,7 +63,7 @@ const convertCurrency = (money) => {
 };
 
 // 8
-const getRandomPassword = (number) => {
+const getRandomPassword = (number = 8) => {
     let num = 0;
     switch(number){
         case 1: 
@@ -110,8 +110,7 @@ const deleteLetters = (letter, word) => {
 // 10
 const isPalyndrom = (word) => {
     const reversed = word.split('').reverse().join('');
-    if (reversed === word) return true;
-    return false;
+    return reversed === word;
 };
 
 // 11
