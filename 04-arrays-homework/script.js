@@ -55,8 +55,13 @@ const studentsMarks = getStudentsMarks(students, marks);
 const randomMark = getRandomMarks();
 const pairsMarks = getPairsMarks(pairsThemes, randomMark);
 
+console.log("Students pair:");
 console.log(pairsOfStudents);
+console.log("Theme for students pair:");
 console.log(pairsThemes);
+console.log("Mark for each student:");
 console.log(studentsMarks);
+console.log("Random mark:");
 console.log(randomMark);
+console.log("Mark for each pair:");
 console.log(pairsMarks);
