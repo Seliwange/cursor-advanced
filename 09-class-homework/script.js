@@ -16,6 +16,7 @@ class Student{
     }
     
     set setMarks(newMark){
+        if(this.isExpelled) return null;
         return this.marks.push(newMark);
     }
 
