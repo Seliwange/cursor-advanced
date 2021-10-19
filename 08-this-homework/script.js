@@ -32,11 +32,12 @@ const getTotalTaxes = function (){
 
 // 4 
 const getMySalary = function (){
-    let minSalary = 1500;
-    let maxSalary = 2000;
-    let mySalary = +(Math.random() * (maxSalary - minSalary + 1) + minSalary).toFixed(2);
-    let profit = +(mySalary - this.tax).toFixed(2);
-    return {salary: mySalary, taxes: this.tax, profit: profit};
+    const minSalary = 1500;
+    const maxSalary = 2000;
+    const mySalary = +(Math.random() * (maxSalary - minSalary + 1) + minSalary).toFixed(2);
+    const taxes = +(mySalary * this.tax).toFixed(2);
+    const profit = +(mySalary - taxes).toFixed(2);
+    return {salary: mySalary, taxes: taxes, profit: profit};
 };
 
 setInterval(function(){
