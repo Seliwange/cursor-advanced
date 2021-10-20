@@ -32,22 +32,19 @@ const getTotalTaxes = function (){
 
 // 4 
 const getMySalary = function (){
-    const minSalary = 1500;
-    const maxSalary = 2000;
-    const mySalary = +(Math.random() * (maxSalary - minSalary + 1) + minSalary).toFixed(2);
-    const taxes = +(mySalary * this.tax).toFixed(2);
-    const profit = +(mySalary - taxes).toFixed(2);
-    return {salary: mySalary, taxes: taxes, profit: profit};
+    setInterval(() => {
+        const minSalary = 1500;
+        const maxSalary = 2000;
+        const mySalary = +(Math.random() * (maxSalary - minSalary + 1) + minSalary).toFixed(2);
+        const taxes = +(mySalary * this.tax).toFixed(2);
+        const profit = +(mySalary - taxes).toFixed(2);
+        console.log({
+            salary: mySalary, 
+            taxes, 
+            profit,
+        });
+    }, 10000);
 };
-
-setInterval(function(){
-    console.log("Salary in Ukraine:");
-    console.log(getMySalary.call(ukraine));
-    console.log("Salary in Latvia:");
-    console.log(getMySalary.call(latvia));
-    console.log("Salary in Litva:");
-    console.log(getMySalary.call(litva));
-}, 10000);
 
 console.log("Taxes in Ukraine:");
 console.log(getMyTaxes.call(ukraine, 1000));
@@ -70,9 +67,6 @@ console.log(latviaTaxes());
 console.log("Total taxes in Litva:");
 const litvaTaxes = getTotalTaxes.bind(litva);
 console.log(litvaTaxes());
-console.log("Salary in Ukraine:");
-console.log(getMySalary.call(ukraine));
-console.log("Salary in Latvia:");
-console.log(getMySalary.call(latvia));
-console.log("Salary in Litva:");
-console.log(getMySalary.call(litva));
+getMySalary.call(ukraine);
+getMySalary.call(latvia);
+getMySalary.call(litva);
