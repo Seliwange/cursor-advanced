@@ -43,7 +43,7 @@ class BudgetStudent extends Student{
     }
     
     getScholarship(){
-        if(this.getMarks === null) return "You are dismissed";
+        if(!this.getMarks) return "You are dismissed";
         if(this.getAverageMark() >= 4){
             return `Ви отримали ${this.scholarship} грн. стипендії`;
         } else {
@@ -61,10 +61,10 @@ console.log(student1);
 console.log("Information about student:");
 console.log(student1.getInfo());
 console.log("Student marks:");
-console.log(student1.marks);
+console.log(student1.marks.join(","));
 console.log("Student new marks:");
 student1.setMarks = 5;
-console.log(student1.marks);
+console.log(student1.marks.join(","));
 console.log("Student average mark:");
 console.log(student1.getAverageMark());
 console.log("Student is dismissed:");
