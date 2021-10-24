@@ -1,0 +1,14 @@
+
+.blocks{
+    display: none;
+}
+
+.active{
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+}
+
+.square{
+    width: 50px;
+    height: 50px;
+}
