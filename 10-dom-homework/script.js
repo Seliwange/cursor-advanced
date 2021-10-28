@@ -1,20 +1,18 @@
 const generateBlocks = () => {
-    let section = document.createElement("section");
-    section.className = "blocks";
-    let p = document.querySelector("p:last-of-type");
-    p.insertAdjacentElement("afterend", section);
+    const blockContainer = document.createElement("section");
+    blockContainer.className = "blocks";
+    const lastParagraph = document.querySelector("p:last-of-type");
+    lastParagraph.insertAdjacentElement("afterend", blockContainer);
     for(let i = 0; i < 25; i++){
         let div = document.createElement("div");
         div.classList.add("square");
-        div.style.width = "50px";
-        div.style.height = "50px";
-        section.appendChild(div);
+        blockContainer.appendChild(div);
     }
     generateRandomColors();
 };
 
 const generateRandomColors = () => {
-    let square = document.querySelectorAll(".square");
+    const square = document.querySelectorAll(".square");
     for(let i = 0; i < square.length; i++){
         let color = "#" + Math.random().toString(16).substring(2, 8);
         square[i].style.backgroundColor = color;
