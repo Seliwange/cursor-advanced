@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: slategray;
+}
+
+.keys{
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 70px);
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.key{
+    width: 70px;
+    height: 70px;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #099bdd;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.playing{
+    border: 2px solid #099bdd;
+    box-shadow: 0 3px 10px 4px;
+    transform: scale(0.96);
+}
+
+.anime > div{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    bottom: 50%;
+    left: 50%;
+    bottom: 100%;
+    z-index: -1;
+}
+
+@keyframes fly{
+    0%{
+        bottom: 50%;
+        left: 50%;
+    }
+    50%{
+        bottom: 70%;
+        left: 20%;
+    }
+    100%{
+        bottom: 100%;
+        left: 100%;
+    }
+}
