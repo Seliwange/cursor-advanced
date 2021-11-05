@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    background: url(../assets/star-wars_bg.jpg);
+    background-size: contain;
+    background-repeat: repeat-y;
+    margin: 0 auto;
+    padding: 20px;
+    color: aliceblue;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+#translate{
+    margin-bottom: 20px;
+}
+.people__content{
+
+}
+
+.planet__content{
+
+}
+
+#search-input{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button{
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 7px 25px;
+    background: linear-gradient(89.77deg, #00bcd4 30.2%, #f33e31 99.82%);
+    border: 1px solid #00bcd4;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: linear-gradient(89.77deg, #f33e31 0.2%, #00bcd4 99.82%);
+    border: 1px solid #f33e31;
+}
+
+.people, .planet{
+    max-width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 2em;
+    margin: 20px 0;
+}
+
+.people{
+    background: #26e6ff87;
+}
+.planet{
+    background: #ff887f85;
+    color: black;
+}
+
+#people__list, #planet__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+@media (max-width: 692px){
+    #people__list, #planet__list{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+    }
+    
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#14 Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="translate">Translate</button>
+    <main class="main">
+        <div class="people__content">
+            <form action="#">
+                <input id="search-input" type="search" placeholder="Number from 1 to 6">
+                <button id="search-btn">Search</button>
+            </form>
+            <button id="people__load">Get Information</button>
+            <div id="people__list"></div>
+        </div>
+        <div class="planet__content">
+            <h2>Page: <span id="page"></span></h2>
+            <button id="prev__btn">Previous</button>
+            <button id="next__btn">Next</button>
+            <div class="planet__inner">
+                <div id="planet__list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
