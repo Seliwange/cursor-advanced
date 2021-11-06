@@ -5,6 +5,7 @@
 }
 
 body{
+    width: 100%;
     font-family: 'Karla', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -12,25 +13,20 @@ body{
     background: url(../assets/star-wars_bg.jpg);
     background-size: contain;
     background-repeat: repeat-y;
+    background-color: black;
     margin: 0 auto;
     padding: 20px;
     color: aliceblue;
+}
+
+::placeholder{
+    color: white;
 }
 
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
-}
-#translate{
-    margin-bottom: 20px;
-}
-.people__content{
-
-}
-
-.planet__content{
-
 }
 
 #search-input{
@@ -41,6 +37,7 @@ body{
     color: white;
     border-radius: 5px;
     margin-bottom: 20px;
+    padding: 0 8px;
 }
 
 button{

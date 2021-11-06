@@ -12,11 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <button id="translate">Translate</button>
     <main class="main">
         <div class="people__content">
             <form action="#">
-                <input id="search-input" type="search" placeholder="Number from 1 to 6">
+                <input id="search-input" type="number" min="1" max="6" placeholder="Number from 1 to 6">
                 <button id="search-btn">Search</button>
             </form>
             <button id="people__load">Get Information</button>
@@ -31,7 +30,7 @@
             </div>
         </div>
     </main>
-
+    <footer id="footer"></footer>
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,8 +1,5 @@
 const baseUrl = "https://swapi.dev/api";
-const films2 = "https://swapi.dev/api/films/2/";
-const films = "https://swapi.dev/api/films";
 
-const translateBtn = document.getElementById("translate");
 const peopleList = document.getElementById("people__list");
 const loadBtnPeople = document.getElementById("people__load");
 const searchInput = document.getElementById("search-input");
@@ -17,21 +14,24 @@ let currentPage = 1;
 const getPeople = (searchFilm) => {
     peopleList.innerHTML = "loading...";
     axios
-    .get(`${baseUrl}/films/2`)
+    .get(`${baseUrl}/films/${searchFilm}`)
     .then((response) => {
-        const listElems = response.data.characters;
+        let list = "";
+        let listElems = response.data.characters;
         listElems.forEach(item => {
             axios
             .get(`${item}`)
             .then((response) => {
-                const list = Object.values(response).map((data) => 
-                `<div class="people">  
-                <h3>Full name: ${data.name}</h3>
-                <p>Date of birth: ${data.birth_year}</p>
-                <p>Gender: ${data.gender}</p>
-                </div>`
-                );
-                peopleList.innerHTML = list.join("");
+                Object.values(response).forEach((data) => {
+                    if(data.name !== undefined){
+                        list += `<div class="people">  
+                        <h3>Full name: ${data.name}</h3>
+                        <p>Date of birth: ${data.birth_year}</p>
+                        <p>Gender: ${data.gender}</p>
+                        </div>`
+                    }
+                });
+                peopleList.innerHTML = list;
             })
             .catch((err) => {
                 console.log("Error:", err);
@@ -45,7 +45,13 @@ const getPeople = (searchFilm) => {
     });
 };
 
-loadBtnPeople.onclick = getPeople;
+loadBtnPeople.addEventListener("click", () => {
+    getPeople(2);
+});
+searchBtn.addEventListener("click", () =>{
+    const {value} = searchInput;
+    getPeople(value);
+});
 
 const getPlanets = () => {
     planetList.innerHTML = "loading...";
@@ -71,6 +77,7 @@ const getPlanets = () => {
 };
 
 nextBtn.addEventListener("click", () => {
+    if(currentPage === 6) return;
     currentPage += 1;
     getPlanets();
 });
@@ -81,11 +88,3 @@ prevBtn.addEventListener("click", () => {
 });
 
 getPlanets();
-
-translateBtn.addEventListener("click", () => {
-    axios
-    .get(`${baseUrl}/planets/?format=wookiee`)
-    .then((response) => {
-        getPlanets(response);
-    })
-});
