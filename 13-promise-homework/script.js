@@ -1,7 +1,7 @@
 function getRandomChinese(length) {
     return new Promise((resolve, reject) => {
         let str = '';
-        let i = 0
+        let i = 0;
         while (i < length) {
             setTimeout(() => {
                 str += String.fromCharCode(Date.now()).slice(-length);
