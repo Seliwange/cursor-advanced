@@ -24,11 +24,13 @@ const getPeople = (searchFilm) => {
             .then((response) => {
                 Object.values(response).forEach((data) => {
                     if(data.name !== undefined){
-                        list += `<div class="people">  
-                        <h3>Full name: ${data.name}</h3>
-                        <p>Date of birth: ${data.birth_year}</p>
-                        <p>Gender: ${data.gender}</p>
-                        </div>`
+                        list += `
+                        <div class="people">  
+                            <h3>Full name: ${data.name}</h3>
+                            <p>Date of birth: ${data.birth_year}</p>
+                            <p>Gender: ${data.gender}</p>
+                        </div>
+                        `
                     }
                 });
                 peopleList.innerHTML = list;
@@ -45,14 +47,6 @@ const getPeople = (searchFilm) => {
     });
 };
 
-loadBtnPeople.addEventListener("click", () => {
-    getPeople(2);
-});
-searchBtn.addEventListener("click", () =>{
-    const {value} = searchInput;
-    getPeople(value);
-});
-
 const getPlanets = () => {
     planetList.innerHTML = "loading...";
     page.innerHTML = currentPage;
@@ -67,14 +61,22 @@ const getPlanets = () => {
             </div>
             `
         );
-  
         planetList.innerHTML = listElems.join("");
-      })
-      .catch((err) => {
+    })
+    .catch((err) => {
         console.log("Error:", err);
         planetList.innerHTML = "Error occured :" + err.message;
-      });
+    });
 };
+
+loadBtnPeople.addEventListener("click", () => {
+    getPeople(2);
+});
+
+searchBtn.addEventListener("click", () =>{
+    const {value} = searchInput;
+    getPeople(value);
+});
 
 nextBtn.addEventListener("click", () => {
     if(currentPage === 6) return;
